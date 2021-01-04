@@ -1,15 +1,12 @@
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: hemanth
-  namespace: hemanth
+  name: nginx-service
 spec:
   type: LoadBalancer
   selector:
-    app: hs
+    app: nginx
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-
