@@ -1,0 +1,16 @@
+
+cat <<EOF > loadbalancer.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hs-service
+  namespace: hemanth
+spec:
+  type: LoadBalancer
+  selector:
+    app: hs
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
